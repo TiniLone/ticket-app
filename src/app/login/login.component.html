@@ -1,0 +1,85 @@
+<div class="container">
+  <!--
+  <div class="row">
+    <div class="center-block" *ngIf="!connected">
+      <button type=button class="btn btn-primary" (click)="signInAnonymously()">Anonymous Login</button>
+    </div>
+
+    <button type=button class="btn btn-primary" (click)="signOut()" *ngIf="connected">Logout</button>
+  </div>
+  -->
+  <div class="page_login" *ngIf="!connected">
+    <h3 class="login_Title">Login or <a href="#">Sign up</a></h3>
+    <div class="row row-sm-offset-3 social_buttons">
+      <div class="col-xs-4 col-sm-2">
+        <a href="#" class="btn btn-lg btn-block btn-anonymous" (click)="signInAnonymously()">
+          <i class="fa fa-universal-access visible-xs"></i>
+          <span class="hidden-xs">Anonymous</span>
+        </a>
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <a href="#" class="btn btn-lg btn-block btn-facebook" (click)="signInWithFacebook()">
+          <i class="fa fa-facebook visible-xs"></i>
+          <span class="hidden-xs">Facebook</span>
+        </a>
+      </div>
+      <!--
+      <div class="col-xs-4 col-sm-2">
+        <a href="#" class="btn btn-lg btn-block btn-twitter">
+          <i class="fa fa-twitter visible-xs"></i>
+          <span class="hidden-xs">Twitter</span>
+        </a>
+      </div>
+      -->
+      <div class="col-xs-4 col-sm-2">
+        <a href="#" class="btn btn-lg btn-block btn-google" (click)="signInWithGoogle()">
+          <i class="fa fa-google-plus visible-xs"></i>
+          <span class="hidden-xs">Google+</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="row row-sm-offset-3 login_or">
+      <div class="col-xs-12 col-sm-6">
+        <hr class="hr_or">
+        <span class="span_or">or</span>
+      </div>
+    </div>
+
+    <div class="row row-sm-offset-3">
+      <div class="col-xs-12 col-sm-6">
+        <form class="loginForm" action="" autocomplete="off" method="POST">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" #username name="username" placeholder="email address">
+          </div>
+          <span class="help-block"></span>
+
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input type="password" class="form-control" #password name="password" placeholder="Password">
+          </div>
+          <!--<span class="help-block">Password error</span>-->
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="signInWithEmail(username.value, password.value)">Login</button>
+        </form>
+      </div>
+    </div>
+    <div class="row row-sm-offset-3">
+      <div class="col-xs-12 col-sm-3">
+        <label class="checkbox">
+		  <input type="checkbox" value="remember-me">Remember Me
+		</label>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <p class="forgotPwd">
+          <a href="#">Forgot password?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div  *ngIf="connected">
+    <router-outlet></router-outlet>
+  </div>
+</div>

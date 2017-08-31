@@ -1,14 +1,14 @@
 <div class="container">
   <!--
   <div class="row">
-    <div class="center-block" *ngIf="!connected">
+    <div class="center-block" *ngIf="!authenticated()">
       <button type=button class="btn btn-primary" (click)="signInAnonymously()">Anonymous Login</button>
     </div>
 
-    <button type=button class="btn btn-primary" (click)="signOut()" *ngIf="connected">Logout</button>
+    <button type=button class="btn btn-primary" (click)="signOut()" *ngIf="authenticated()">Logout</button>
   </div>
   -->
-  <div class="page_login" *ngIf="!connected">
+  <div class="page_login" *ngIf="!authenticated()">
     <h3 class="login_Title">Login or <a href="#">Sign up</a></h3>
     <div class="row row-sm-offset-3 social_buttons">
       <div class="col-xs-4 col-sm-2">
@@ -78,8 +78,9 @@
       </div>
     </div>
   </div>
-
-  <div  *ngIf="connected">
+<!--
+  <div *ngIf="authenticated()">
     <router-outlet></router-outlet>
   </div>
+-->
 </div>

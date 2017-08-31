@@ -13,6 +13,7 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
+    console.log('' + this.currentUser != null);
     return this.currentUser != null;
   }
 

@@ -47,7 +47,7 @@ export class LoginComponent {
     console.log(message + ' successfully');
   }
 
-  connected(): boolean {
+  authenticated(): boolean {
     return this._auth.authenticated;
   }
 

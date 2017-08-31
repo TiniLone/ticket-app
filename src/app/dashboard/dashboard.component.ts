@@ -16,8 +16,12 @@ import * as firebase from 'firebase/app';
 export class DashboardComponent {
   user: Observable<firebase.User>;
 
-  constructor(public afAuth: AngularFireAuth, private _auth: AuthService, private router: Router) {
+  constructor(public afAuth: AngularFireAuth, public _auth: AuthService, private router: Router) {
     this.user = afAuth.authState;
+  }
+
+  authenticated(): boolean {
+    return this.user != null;
   }
 
   signOut(): void {

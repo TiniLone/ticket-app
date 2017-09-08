@@ -21,7 +21,9 @@ export class DashboardComponent {
   }
 
   authenticated(): boolean {
-    return this.user != null;
+    console.log('Dash : ' + this._auth.authenticated);
+    console.log('Dash u : ' + this.user);
+    return this._auth.authenticated;
   }
 
   signOut(): void {

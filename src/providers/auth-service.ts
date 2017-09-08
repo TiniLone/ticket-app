@@ -12,8 +12,12 @@ export class AuthService {
     afAuth.authState.subscribe((user: firebase.User) => this.currentUser = user);
   }
 
+  signUp(email: string, password: string) {
+    this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+  }
+
   get authenticated(): boolean {
-    console.log('' + this.currentUser != null);
+    console.log('' + this.currentUser != null)
     return this.currentUser != null;
   }
 

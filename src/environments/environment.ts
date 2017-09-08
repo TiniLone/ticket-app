@@ -10,7 +10,7 @@ export const environment = {
     authDomain: 'ticket-app-projet.firebaseapp.com',
     databaseURL: 'https://ticket-app-projet.firebaseio.com',
     projectId: 'ticket-app-projet',
-    storageBucket: '',
+    storageBucket: 'ticket-app-projet.appspot.com',
     messagingSenderId: '423206387244'
   }
 };
